@@ -84,7 +84,7 @@ class AVLTree:
     def _right_rotate(self, z):
         # T1 and T2 are x's left and right subtrees respectively
         # T3 is y's right subtree
-        # T4 is z's left subtree
+        # T4 is z's right subtree
         #          z
         #        /   \
         #       y     T4
