@@ -54,6 +54,7 @@ class LinearProbing:
                 if self.keys[new_index] == key:
                     self.keys[new_index] = None
                     self.values[new_index] = None
+                    # Calling rehash() function to rehash all the keys and values into a new table
                     self.rehash()
                     return
                 new_index = (new_index + 1) % self.size
