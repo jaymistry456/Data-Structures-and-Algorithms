@@ -25,7 +25,7 @@ class MaxHeap:
     def _percolate_down(self, index):
         largest = index
         left_child = index * 2 + 1
-        right_child = index * 2 + 1
+        right_child = index * 2 + 2
         # Finding which one is the largest out of index and its left and right children
         if left_child < len(self.heap) and self.heap[left_child] > self.heap[largest]:
             largest = left_child
