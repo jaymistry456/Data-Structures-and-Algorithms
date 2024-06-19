@@ -36,9 +36,7 @@ def reverse(arr):
     start = 0
     end = len(arr) - 1
     while start < end:
-        temp = arr[start]
-        arr[start] = arr[end]
-        arr[end] = temp
+        arr[start], arr[end] = arr[end], arr[start]
         start = start + 1
         end = end - 1
     return arr
@@ -80,16 +78,16 @@ def merge_sorted_arrays(arr1, arr2):
             merged_arr[k] = arr2[j]
             j = j + 1
         k = k + 1
-    if i < len(arr1):
-        while i < len(arr1):
-            merged_arr[k] = arr1[i]
-            i = i + 1
-            k = k + 1
-    else:
-        while j < len(arr2):
-            merged_arr[k] = arr2[j]
-            j = j + 1
-            k = k + 1
+
+    while i < len(arr1):
+        merged_arr[k] = arr1[i]
+        i = i + 1
+        k = k + 1
+    while j < len(arr2):
+        merged_arr[k] = arr2[j]
+        j = j + 1
+        k = k + 1
+
     return merged_arr
 
 
@@ -108,16 +106,16 @@ def union_on_sorted_arrays(arr1, arr2):
             union_arr[k] = arr2[j]
             j = j + 1
         k = k + 1
-    if i < len(arr1):
-        while i < len(arr1):
+
+    while i < len(arr1):
             union_arr[k] = arr1[i]
             i = i + 1
             k = k + 1
-    else:
-        while j < len(arr2):
+    while j < len(arr2):
             union_arr[k] = arr2[j]
             j = j + 1
             k = k + 1
+
     return union_arr
 
 
@@ -136,6 +134,7 @@ def intersection_on_sorted_arrays(arr1, arr2):
             i = i + 1
             j = j + 1
         k = k + 1
+
     return intersection_arr
 
 
@@ -154,8 +153,10 @@ def set_diff_on_sorted_arrays(arr1, arr2):
         else:
             i = i + 1
             j = j + 1
+
     while i < len(arr1):
         set_diff_arr[k] = arr1[i]
         i = i + 1
         k = k + 1
+
     return set_diff_arr
